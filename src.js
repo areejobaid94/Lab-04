@@ -30,7 +30,7 @@ function myFunction1(Event) {
         alert('password is required')
       }
       else {
-          alert('You have logged in successfully'+ username )
+          alert('You have logged in successfully '+ username )
           document.getElementById("Sign-Up").style.display = "none";
           document.getElementById("login").style.display = "none";
           document.getElementById("user-account").style.display = "block";
@@ -53,7 +53,7 @@ function myFunction1(Event) {
         alert('mobile is required')
     }
     else {
-        alert('You have logged in successfully'+ username )
+        alert('You have logged in successfully '+ username )
         document.getElementById("Sign-Up").style.display = "none";
         document.getElementById("login").style.display = "none";
         document.getElementById("user-account").style.display = "block";
