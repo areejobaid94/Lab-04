@@ -84,16 +84,14 @@ function areYouRobot(){
     person = prompt(person + ' is not equal to ' + prevWord + ".  To make sure that you are not a robot Enter the word => " + word);
   }
   numOfStars = prompt("How many Stars are you giving to our website, Choose for 1 to 5");
-  while (numOfStars == '' || isNaN(numOfStars)) {
+  while (numOfStars == '' || isNaN(numOfStars) || numOfStars > 5) {
     numOfStars = prompt("How many Stars are you giving to our website, Choose for 1 to 5");
   }
   alert('Thank you!')
 }
+
 function addStars(){
   let allStart = '';
-  if(numOfStars > 5){
-    numOfStars = 5
-  }
   for(let i = 0 ; i < numOfStars ; i++){
     allStart = allStart + '<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/9c/Golden_star.svg/1200px-Golden_star.svg.png" alt="" style="width: 20px;margin-top:10px"/>'
   }
