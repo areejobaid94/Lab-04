@@ -17,7 +17,7 @@ function myFunction1(Event) {
     document.getElementById("user-account").style.display = "none";
   }
 
-  function myFunction3(type,cost){
+  function addToCart(type,cost){
     if(Username == ''){
       alert('Login before')
     }else{
