@@ -2,6 +2,7 @@ var cart = [];
 var sumcost = 0;
 var Username = '';
 var pass = '';
+var numOfStars = 0;
 
 areYouRobot();
 
@@ -73,12 +74,28 @@ function myFunction1(Event) {
         document.getElementById("new-user-name").innerHTML = username;
     }
 }
+
 function areYouRobot(){
   var word =Math.round(Math.random() * 10) + "S" + Math.round(Math.random() * 10) +  "a" + Math.round(Math.random() * 10);
   var person = prompt("Welcome To Our Website, To make sure that you are not a robot Enter the word => " + word);
   while(person !=  word){
+    let prevWord = word;
     word = Math.round(Math.random() * 10) + "u" + Math.round(Math.random() * 10) + "Z" + Math.round(Math.random() * 10);
-    person = prompt("To make sure that you are not a robot Enter the word => " + word);
+    person = prompt(person + ' is not equal to ' + prevWord + ".  To make sure that you are not a robot Enter the word => " + word);
   }
-  alert('Great!')
+  numOfStars = prompt("How many Stars are you giving to our website, Choose for 1 to 5");
+  while (numOfStars == '' || isNaN(numOfStars)) {
+    numOfStars = prompt("How many Stars are you giving to our website, Choose for 1 to 5");
+  }
+  alert('Thank you!')
+}
+function addStars(){
+  let allStart = '';
+  if(numOfStars > 5){
+    numOfStars = 5
+  }
+  for(let i = 0 ; i < numOfStars ; i++){
+    allStart = allStart + '<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/9c/Golden_star.svg/1200px-Golden_star.svg.png" alt="" style="width: 20px;margin-top:10px"/>'
+  }
+  return allStart
 }
