@@ -1,3 +1,7 @@
+var cart = [];
+var sumcost = 0;
+var Username = '';
+var pass = ''
 function myFunction() {
     var person = prompt("Welcome To Our Website, Please enter your name", "Your Name");
     if (person != 'Your Name') {
@@ -13,8 +17,22 @@ function myFunction1(Event) {
     document.getElementById("user-account").style.display = "none";
   }
 
-  function myFunction3(){
-    confirm("Done");
+  function myFunction3(type,cost){
+    if(Username == ''){
+      alert('Login before')
+    }else{
+      let obj = {};
+      obj.type = type;
+      obj.cost = cost;
+      cart.push(obj);
+      sumcost = sumcost + Number(cost);
+      let outputStr = 'Thank you '+ Username + ',you have ';
+      for(let i = 0 ;  i < cart.length;i++){
+        outputStr = outputStr + cart[i].type + " price "+ cart[i].cost + " ";
+      }
+      confirm(outputStr + "Sum Cost: " + sumcost);
+    }
+   
   }
 
   function login(){
@@ -30,6 +48,8 @@ function myFunction1(Event) {
         alert('password is required')
       }
       else {
+          Username = username;
+          pass = password;
           alert('You have logged in successfully '+ username )
           document.getElementById("Sign-Up").style.display = "none";
           document.getElementById("login").style.display = "none";
@@ -53,6 +73,8 @@ function myFunction1(Event) {
         alert('mobile is required')
     }
     else {
+        Username = username;
+        pass = password;
         alert('You have logged in successfully '+ username )
         document.getElementById("Sign-Up").style.display = "none";
         document.getElementById("login").style.display = "none";
