@@ -23,7 +23,11 @@ function myFunction1(Event) {
       sumcost = sumcost + Number(cost);
       let outputStr = 'Thank you '+ Username + ',you have ';
       for(let i = 0 ;  i < cart.length;i++){
-        outputStr = outputStr + cart[i].type + " price "+ cart[i].cost + "  ";
+        if((i+1) != cart.length){
+          outputStr = outputStr + cart[i].type + " price "+ cart[i].cost + "+";
+        }else{
+          outputStr = outputStr + cart[i].type + " price "+ cart[i].cost + " ";
+        }
       }
       confirm(outputStr + "; => Total Cost: " + sumcost);
     }
