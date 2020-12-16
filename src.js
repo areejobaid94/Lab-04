@@ -1,16 +1,10 @@
 var cart = [];
 var sumcost = 0;
 var Username = '';
-var pass = ''
-function myFunction() {
-    var person = prompt("Welcome To Our Website, Please enter your name", "Your Name");
-    if (person != 'Your Name') {
-        alert('Hi ' + person)
-    }else{
-        myFunction()
-    }
-  }
-  myFunction()
+var pass = '';
+
+areYouRobot();
+
 function myFunction1(Event) {
     document.getElementById("login").style.display = "none";
     document.getElementById("Sign-Up").style.display = "block";
@@ -28,9 +22,9 @@ function myFunction1(Event) {
       sumcost = sumcost + Number(cost);
       let outputStr = 'Thank you '+ Username + ',you have ';
       for(let i = 0 ;  i < cart.length;i++){
-        outputStr = outputStr + cart[i].type + " price "+ cart[i].cost + " ";
+        outputStr = outputStr + cart[i].type + " price "+ cart[i].cost + "  ";
       }
-      confirm(outputStr + "Sum Cost: " + sumcost);
+      confirm(outputStr + "; => Total Cost: " + sumcost);
     }
    
   }
@@ -38,8 +32,6 @@ function myFunction1(Event) {
   function login(){
       let username = document.getElementById("username1").value;
       let password = document.getElementById("password1").value;
-      console.log(username)
-
       if(username == ''  && password == ''){
           alert('Username and Password are required')
       }else if(username == ""){
@@ -62,7 +54,6 @@ function myFunction1(Event) {
     let username = document.getElementById("username").value;
     let password = document.getElementById("password").value;
     let mobile = document.getElementById("mobile").value;
-
     if(username == ''  && password == '' && mobile == ''){
         alert('Username, Password and Mobile are required')
     }else if(username == ""){
@@ -81,4 +72,13 @@ function myFunction1(Event) {
         document.getElementById("user-account").style.display = "block";
         document.getElementById("new-user-name").innerHTML = username;
     }
+}
+function areYouRobot(){
+  var word =Math.round(Math.random() * 10) + "S" + Math.round(Math.random() * 10) +  "a" + Math.round(Math.random() * 10);
+  var person = prompt("Welcome To Our Website, To make sure that you are not a robot Enter the word => " + word);
+  while(person !=  word){
+    word = Math.round(Math.random() * 10) + "u" + Math.round(Math.random() * 10) + "Z" + Math.round(Math.random() * 10);
+    person = prompt("To make sure that you are not a robot Enter the word => " + word);
+  }
+  alert('Great!')
 }
